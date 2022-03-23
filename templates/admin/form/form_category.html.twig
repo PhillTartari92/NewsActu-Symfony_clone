@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+	{% if category is not defined %}
+
+		<h1 class="text-center mt-3">Ajouter une catégorie</h1>
+	{% else %}
+
+		<h1 class="text-center mt-3">Modifier une catégorie {{ category.name }}</h1>
+
+	{% endif %}
+    
+	<div class="row">
+		<div class="col-8 mx-auto my-3">
+
+			{{ form_start(form, {'attr': {novalidate: 'novalidate'}}
+			) }}
+
+			<h1 class="text-center my-3">
+
+				{{ form_row(form.name) }}
+
+			</h1>
+
+
+			{% if article is defined %}
+				<button type="submit" class="d-block col-2 mx-auto btn btn-warning mb-3">Ajouter</button>
+			{% else %}
+				<button type="submit" class="d-block col-2 mx-auto btn btn-warning mb-3">Modifier</button>
+			{% endif %}
+
+			{{ form_end(form) }}
+		</div>
+	</div>
+
+
+{% endblock %}
