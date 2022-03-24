@@ -34,7 +34,7 @@
 				<td>{{ app.user.email }}</td>
 				<td>
                 
-                   <a href="#" class="btn btn-info"><i class="fa fa-user-edit"></i></a>
+                   <a href="{{ path("update_user", {"id": app.user.id} ) }}" class="btn btn-info"><i class="fa fa-user-edit"></i></a>
 
                 </td>
 
