@@ -6,6 +6,14 @@
 		{% include "include/_flashes.html.twig" %}
 	</div>
 
+	<div class="row mt-3">
+	<div class="col-6">
+	
+	    total des commentaires créés: {{ commentaries | length }}
+	
+	</div>
+	</div>
+
 
 	<div class="row">
 		<div class="col-6 mt-4">
@@ -72,7 +80,8 @@
 									<td>{{ commentary.article.title | slice(0, 10) }}</td>
 									<td>{{ commentary.createdAt | date('d/m/Y') }}</td>
 									<td>
-										<a href="{{ path('soft_delete_commentary', {'id': commentary.id}) }}" class="btn btn-info" title="Modifier mon profil">
+										
+										<a href="{{ path('restore_commentary', {'id': commentary.id}) }}" class="btn btn-info" title="Modifier mon profil">
 											<i class="fa fa-trash-restore"></i>
 										</a>
 									</td>
